@@ -1,9 +1,8 @@
-const app = require("express")()
+const app = require("express")() // Initialization a express app
+const PORT = process.env.PORT
 
 app.get("/", (req, res) => {
-    res.send("Hello Docker!")
+    res.send("🐳 Hello Docker!")
 })
 
-app.listen(process.env.PORT, () => {
-    console.log(`App is no running: ${process.env.PORT}`)
-})
+app.listen(PORT, () => console.log(`App is running: ${PORT}`))
