@@ -1,8 +1,11 @@
 FROM node:12-alpine
-WORKDIR /app
-COPY . .
-RUN npm install
+ENV PORT=5000
 
-EXPOSE 5000
-ENV PORT=500
-CMD ["npm", "run", "dev"]
+WORKDIR /app
+
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install --production
+
+COPY . .
+
+CMD ["node", "src/index.js"]
