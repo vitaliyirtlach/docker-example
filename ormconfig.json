@@ -1,0 +1,19 @@
+{
+    "type": "postgres",
+    "host": "host.docker.internal",
+    "port": 5432,
+    "username": "postgres",
+    "password": "13092005",
+    "database": "learn-docker-db",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+       "src/entity/**/*"
+    ],
+    "migrations": [
+       "src/migration/**/*"
+    ],
+    "subscribers": [
+       "src/subscriber/**/*"
+    ]
+ }
